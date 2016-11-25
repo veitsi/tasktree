@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue app01</title>
+</head>
+
+<body>
+    <div id="app">
+        <li>
+            <li v-for="item in list"> {{item.space}} <a href="#" :id="item.id" v-on:click="handle">+</a> {{item.title}} : {{item.id}} </li>
+        </li> <pre>
+    {{$data}}
+  </pre> </div>
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app'
+            , methods: {
+                handle: function (e) {
+                    alert("you clicked" + e.target.id)
+                }
+            }
+            , data: {
+                counter: 0
+                , list: [
+                    {
+                        title: 'item0'
+                        , id: 0
+                        , ident: 0
+                        , space: ""
+                        , folded: true
+                        , childrenIds: []
+                    }
+                    , {
+                        title: 'item1'
+                        , id: 1
+                        , ident: 2
+                        , space: "__"
+                        , folded: true
+                    }
+                    , {
+                        title: 'item2'
+                        , id: 2
+                        , ident: 5
+                        , space: "_____"
+                        , folded: true
+                    }
+            ]
+            }
+        });
+    </script>
+</body>
+
+</html>
